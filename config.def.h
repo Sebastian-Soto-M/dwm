@@ -51,9 +51,9 @@ static const Layout layouts[] = {
 	{ "﩯"   , tile    }, /* first entry is default */
 	{ ""   , NULL    }, /* no layout function means floating behavior */
 	{ ""   , monocle },
+	{ "[D]" , deck    },
 	{ " " , spiral  },
   	{ " " , dwindle },
-	{ "[D]" , deck    },
 };
 
 /* key definitions */
