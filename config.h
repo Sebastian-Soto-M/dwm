@@ -2,15 +2,15 @@
 
 /* appearance */
 static unsigned int borderpx     = 1;        /* border pixel of windows */
-static const int gappx           = 10;                 /* gaps between windows */
+static const int gappx           = 10;       /* gaps between windows */
 static unsigned int snap         = 32;       /* snap pixel */
 static int showbar               = 1;        /* 0 means no bar */
 static int topbar                = 1;        /* 0 means bottom bar */
 static const int vertpad         = 0;        /* DISABLED vertical padding of bar */
 static const int sidepad         = 0;        /* DISABLED horizontal padding of bar */
 static const int swallowfloating = 0;        /* 1 means swallow floating windows by default */
-static const char *fonts[]       = { "FiraCode Nerd Font:size=14" };
-static const char dmenufont[]    = "FiraCode Nerd Font:size=14";
+static const char *fonts[]       = { "FiraCode Nerd Font:size=12" };
+static const char dmenufont[]    = "FiraCode Nerd Font:size=12";
 static char normbgcolor[]        = "#222222";
 static char normbordercolor[]    = "#444444";
 static char normfgcolor[]        = "#bbbbbb";
@@ -48,10 +48,11 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
+	{ "[D]",      deck },
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -88,7 +89,7 @@ ResourcePref resources[] = {
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -96,12 +97,13 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
