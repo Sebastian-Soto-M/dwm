@@ -71,6 +71,7 @@ static const Layout layouts[] = {
 static char dmenumon[2]       = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-c", "-l", "20", "-m", dmenumon, "-fn", dmenufont, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *firefoxcmd[]  = { "firefox", NULL };
 
 /*
  * Xresources preferences to load at startup
@@ -95,6 +96,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd    }  } ,
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd     }  } ,
+	{ MODKEY,                       XK_f,      spawn,          {.v = firefoxcmd  }  } ,
 	{ MODKEY,                       XK_b,      togglebar,      {0                }  } ,
 	{ MODKEY,                       XK_j,      focusstackvis,  {.i = +1          }  } ,
 	{ MODKEY,                       XK_k,      focusstackvis,  {.i = -1          }  } ,
@@ -108,7 +110,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0                }  } ,
 	{ MODKEY,                       XK_q,      killclient,     {0                }  } ,
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0] }  } , //tile
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1] }  } , //floating
+	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1] }  } , //floating
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2] }  } , //monocle
 	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3] }  } , //deck
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[4] }  } , //spiral
