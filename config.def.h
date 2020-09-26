@@ -48,12 +48,12 @@ static int resizehints = 1;    /* 1 means respect size hints in tiled resizals *
 #include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "﩯"  , tile    }                , /* first entry is default */
+	{ "﩯"   , tile    }                , /* first entry is default */
 	{ ""   , NULL    }                , /* no layout function means floating behavior */
 	{ ""   , monocle }                ,
 	{ "[D]" , deck    }                ,
 	{ " " , spiral  }                ,
-  	{ " " , dwindle }                ,
+	{ " " , dwindle }                ,
 	{ "יִ"   , centeredmaster }         ,
 	{ ""   , centeredfloatingmaster } ,
 };
