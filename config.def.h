@@ -48,12 +48,14 @@ static int resizehints = 1;    /* 1 means respect size hints in tiled resizals *
 #include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "﩯"   , tile    }, /* first entry is default */
-	{ ""   , NULL    }, /* no layout function means floating behavior */
-	{ ""   , monocle },
-	{ "[D]" , deck    },
-	{ " " , spiral  },
-  	{ " " , dwindle },
+	{ "﩯"  , tile    }                , /* first entry is default */
+	{ ""   , NULL    }                , /* no layout function means floating behavior */
+	{ ""   , monocle }                ,
+	{ "[D]" , deck    }                ,
+	{ " " , spiral  }                ,
+  	{ " " , dwindle }                ,
+	{ "יִ"   , centeredmaster }         ,
+	{ ""   , centeredfloatingmaster } ,
 };
 
 /* key definitions */
@@ -115,6 +117,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_c,      setlayout,      {.v = &layouts[3] }  } , //deck
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[4] }  } , //spiral
 	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[5] }  } , //dwindle
+	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[6] }  } , //centeredmaster
+	{ MODKEY|ShiftMask,             XK_u,      setlayout,      {.v = &layouts[7] }  } , //centeredfloatingmaster
 	{ MODKEY,                       XK_p,      setlayout,      {0                }  } ,
 	{ MODKEY|ShiftMask,             XK_p,      togglefloating, {0                }  } ,
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0         }  } ,
