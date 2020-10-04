@@ -22,6 +22,7 @@ static char *colors[][3] = {
 };
 
 static const char *const autostart[] = {
+    "redshift", "-v", "-b 1:0.5", NULL,
     "dash", "-c", "~/.fehbg", NULL,
     "picom", "--experimental-backends", NULL,
     "sxhkd", NULL,
