@@ -22,7 +22,8 @@ static char *colors[][3] = {
 };
 
 static const char *const autostart[] = {
-    "redshift", "-v", "-b 1:0.5", NULL,
+    "/home/snsm/.config/dwm-status/dwm_status", NULL,
+    "redshift", "-o", "-b 1:0.5", NULL,
     "dash", "-c", "~/.fehbg", NULL,
     "picom", "--experimental-backends", NULL,
     "sxhkd", NULL,
@@ -30,7 +31,7 @@ static const char *const autostart[] = {
 };
 
 /* tagging */
-static const char *tags[]    = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[]    = { "", "", "", "", "", "", "", "", "" };
 static const char *tagsalt[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
