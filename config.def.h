@@ -23,11 +23,10 @@ static char *colors[][3] = {
 };
 
 static const char *const autostart[] = {
-    "/home/snsm/.config/dwm-status/dwm_status", NULL,
-    "redshift", "-o", "-b 1:0.5", NULL,
     "dash", "-c", "~/.fehbg", NULL,
     "picom", "--experimental-backends", NULL,
     "sxhkd", NULL,
+    "/home/snsm/.config/dwm-status/dwm_status", NULL,
 	NULL /* terminate */
 };
 
